@@ -1,0 +1,23 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - development
+
+  pull_request:
+    branches:
+      - main
+      - development
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run CI Check
+        run: echo "GitHub Actions CI workflow executed successfully"
